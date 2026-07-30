@@ -154,7 +154,7 @@ Open `http://localhost:3000/dashboard` in your browser.
 
 ---
 
-## 🚀 Future Zoho Catalyst Cloud Integration
+## 🚀 Zoho Catalyst Cloud Integration
 
 GlaucoScan is architected specifically for serverless deployment on **Zoho Catalyst**:
 
@@ -173,4 +173,4 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 
 ## 👨‍⚕️ Author & Credits
 
-Developed with ❤️ by **Aishwarya K** & Team for modern clinical AI diagnostics.
+Developed by  **Aishwarya K**  for modern clinical AI diagnostics.
