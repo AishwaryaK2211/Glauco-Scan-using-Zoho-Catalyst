@@ -1,18 +1,36 @@
-# Dependencies
+# Dependencies & Virtual Envs
 venv/
 node_modules/
 frontend/node_modules/
+
+# Next.js Build Outputs
 .next/
 frontend/.next/
-__pycache__/
-*.pyc
+out/
+frontend/out/
 
-# Secondary heavy datasets (only keeping G1020 first 100 images + metadata)
+# Heavy Datasets & Retinal Image Files (Externalized for Catalyst File Store)
+G1020/Images/*
+!G1020/Images/.gitkeep
+G1020/Masks/*
+!G1020/Masks/.gitkeep
 ODIR-5K/
 ORIGA/
 REFUGE/
+preprocessed_images/*
+!preprocessed_images/.gitkeep
 
-# System / Temporary files
+# Local SQLite runtime database
+*.db
+*.db-shm
+*.db-wal
+backend_fastapi/glaucoscan.db
+
+# Generated PDF reports & local artifacts
+reports_output/
+*.pdf
+
+# System / Temporary logs
 .DS_Store
 Thumbs.db
 *.log
