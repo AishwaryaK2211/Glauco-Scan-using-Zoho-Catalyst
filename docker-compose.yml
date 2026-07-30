@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: glaucoscan_db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: secretpassword
+      POSTGRES_DB: glaucoscan
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+
+  backend:
+    build:
+      context: ./backend_fastapi
+      dockerfile: Dockerfile
+    container_name: glaucoscan_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend_fastapi:/app
+      # Mount the ML pipeline model and scripts so the backend can run inference
+      - ./ml_pipeline:/ml_pipeline
+      - ./glaucoscan_model.h5:/glaucoscan_model.h5
+    environment:
+      - DATABASE_URL=postgresql://admin:secretpassword@db:5432/glaucoscan
+      - JWT_SECRET=super_secret_jwt_key
+      - STORAGE_BACKEND=local
+      - STORAGE_PATH=/app/storage
+    depends_on:
+      - db
+    restart: always
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+volumes:
+  postgres_data:

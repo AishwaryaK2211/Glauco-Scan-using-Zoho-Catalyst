@@ -1,0 +1,18 @@
+# Dependencies
+venv/
+node_modules/
+frontend/node_modules/
+.next/
+frontend/.next/
+__pycache__/
+*.pyc
+
+# Secondary heavy datasets (only keeping G1020 first 100 images + metadata)
+ODIR-5K/
+ORIGA/
+REFUGE/
+
+# System / Temporary files
+.DS_Store
+Thumbs.db
+*.log

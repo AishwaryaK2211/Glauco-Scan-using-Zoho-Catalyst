@@ -1,0 +1,15 @@
+{
+  "project": "glaucoscan",
+  "client": {
+    "source": "../frontend",
+    "scripts": {
+      "build": "npm run build"
+    }
+  },
+  "functions": {
+    "targets": [
+      "glaucoscan_api"
+    ],
+    "source": "functions"
+  }
+}

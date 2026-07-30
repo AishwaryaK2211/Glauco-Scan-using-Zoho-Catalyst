@@ -1,0 +1,6 @@
+{
+  "name": "glaucoscan_api",
+  "type": "advancedio",
+  "language": "python3.9",
+  "env": {}
+}

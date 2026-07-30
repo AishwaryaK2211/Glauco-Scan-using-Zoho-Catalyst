@@ -1,0 +1,7 @@
+Flask==2.2.3
+zc-catalyst-sdk
+Werkzeug==2.2.3
+tensorflow
+opencv-python-headless
+numpy
+pandas
